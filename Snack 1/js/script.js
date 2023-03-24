@@ -24,3 +24,14 @@ const bici = [
         peso: 9
     },
 ];
+
+let biciLeggera = bici[0];
+console.log(biciLeggera);
+bici.forEach((curBici) => {
+    const {nome, peso} = curBici;
+    if (peso < biciLeggera.peso) {
+        biciLeggera = curBici;
+    }
+    console.log(nome, peso);
+})
+document.querySelector("h1").innerHTML = `La bici col minor peso è ${biciLeggera.nome} e pesa ${biciLeggera.peso}kg`;
