@@ -37,11 +37,23 @@ const squadre = [
     },
 ];
 
+const classifica = [];
 squadre.forEach((curSquadra) => {
+    // Genero numeri random per punti fatti e falli subiti
     curSquadra.punti = getRndInteger(40, 70);
     curSquadra.falliSubiti = getRndInteger(300, 500);
-    console.log(curSquadra.punti, curSquadra.falliSubiti);
+    console.log("Punti fatti:" , curSquadra.punti, "Falli subiti: ", curSquadra.falliSubiti);
+    // Prendo nome e falliSubiti da ogni squadra (oggetto)
+    const {nome, falliSubiti} = curSquadra;
+    console.log("Squadra: ", nome, "Falli subiti: ", falliSubiti);
+    // Inserisco un oggetto 'team' nell'array 'classifica'
+    const team = {
+        nome,
+        falliSubiti
+    }
+    classifica.push(team);
 });
+console.log("Classifica: ", classifica);
 
 //////////////////////////
 // FUNCTIONS
