@@ -36,3 +36,17 @@ const squadre = [
         falliSubiti: 0,
     },
 ];
+
+squadre.forEach((curSquadra) => {
+    curSquadra.punti = getRndInteger(40, 70);
+    curSquadra.falliSubiti = getRndInteger(300, 500);
+    console.log(curSquadra.punti, curSquadra.falliSubiti);
+});
+
+//////////////////////////
+// FUNCTIONS
+
+// Genero numeri random
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
